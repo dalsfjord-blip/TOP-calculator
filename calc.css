@@ -1,1 +1,85 @@
+/* Center the calculator on the screen */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1f1d1d;
+    font-family: sans-serif;
+}
 
+.calculator {
+    width: 320px;
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(54, 52, 52, 0.3);
+}
+
+/* The Screen */
+#display {
+    background-color: #474444;
+    color: white;
+    font-size: 2rem;
+    text-align: right;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* The Magic of Flexbox */
+.button-grid {
+    display: flex;
+    flex-wrap: wrap; /* This makes buttons drop to the next line */
+    gap: 12px;      /* Professional spacing without margins */
+}
+
+button {
+    flex: 1 0 21%;    /* Keeps 4 buttons per row */
+    aspect-ratio: 1;  /* Forces the height to equal the width */
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50%; /* This makes them round */
+   
+    cursor: pointer;
+    background-color: #eee;
+    transition: background-color 0.2s;
+}
+
+/* Styling different types of buttons */
+.operator {
+    background-color: #f39c12;
+    color: white;
+}
+
+.special {
+    background-color: #168544;
+    color: white;
+}
+
+button:hover {
+    filter: brightness(1.2);
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Futura'; /* Gives it a "coder" look */
+    color: #555;
+}
+
+footer a {
+    text-decoration: none;
+    color: #f39c12; /* Matches your operator button color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #e67e22;
+    text-decoration: underline;
+}
